@@ -1,0 +1,17 @@
+Book.create(title: "Americanah", author: "Chimamanda Adichie", publication: "2012", genre:  "African Literature")
+Book.create(title: "Adultery", author: "Paulo Coelho", publication: "2007", genre:  "Fiction")
+Book.create(title: "Odufa", author: "Othuke Omniabohs", publication: "2022", genre:  "African Literature")
+Book.create(title: "Animal Farm", author: "George Orwell", publication: "1984", genre:  "Fantasy")
+Book.create(title: "Overstory", author: "Richard Powers", publication: "2018", genre:  "Fantasy")
+
+User.create(first_name: "Gatwiri", last_name: "Murithi", username: "moriarty", email:  "gatwimurithi@gmail.com", password: "JARVIS", age: 30, location: "Nairobi" )
+User.create(first_name: "Munene", last_name: "Nyaga", username: "natty", email:  "munenenyaga@gmail.com", password: "THANOS", age: 25, location: "Kisumu" )
+User.create(first_name: "Effie", last_name: "Lina", username: "effie", email:  "effielinah@gmail.com", password: "SCARLET", age: 33, location: "Nairobi" )
+User.create(first_name: "Mwangi", last_name: "Martin", username: "weber", email:  "martinmwangi@gmail.com", password: "IRONMAN", age: 35, location: "Embu" )
+User.create(first_name: "Linda", last_name: "Murithi", username: "ella", email:  "lindamurithi@gmail.com", password: "BLACKWIDOW", age: 27, location: "Meru" )
+
+Comment.create(comment: "I found the imagery a little lacking", review: "The Newyork Times Review", rating: 3, username:  "moriarty")
+Comment.create(comment: "I loved the wordplay and characterization", review: "Goodreads Review", rating: 5, username:  "ella")
+Comment.create(comment: "There was too much hype around this", review: "AKO Review", rating: 2, username:  "natty")
+Comment.create(comment: "I wish I could forget so I can read it again", review: "CAINE Review", rating: 4, username:  "moriarty")
+Comment.create(comment: "Such a riveting account", review: "Vulture Magazine Review", rating: 4, username:  "weber")
