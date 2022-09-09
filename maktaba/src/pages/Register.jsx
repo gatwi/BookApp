@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -8,7 +8,7 @@ const Container = styled.div`
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    url("https://i.pinimg.com/736x/14/3e/67/143e67e346da0b1b23553dbf0199f514.jpg")
         center;
     background-size: cover;
     display: flex;
@@ -55,23 +55,45 @@ const Button = styled.button`
 
 
 
-const Register = () => {
+const Register = ({ currentUser, onAddUser }) => {
+  const [user, setUser] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    fetch("http://localhost:9292/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: currentUser.username,
+        user: user,
+      }),
+    })
+      .then((r) => r.json())
+      .then((newUser) => {
+        onAddUser(newUser);
+        setUser("");
+      });
+  }
+
   return (
     <Container>
         <Wrapper>
             <Title>CREATE AN ACCOUNT</Title>
-            <Form>
-                <Input placeholder="name" />
-                <Input placeholder="last name" />
-                <Input placeholder="username" />
-                <Input placeholder="email" />
-                <Input placeholder="password" />
-                <Input placeholder="confirm password" />
+            <Form onSubmit={handleSubmit}>
+                <Input placeholder="name" onChange={(e) => setBody(e.target.value)}/>
+                <Input placeholder="last name" onChange={(e) => setBody(e.target.value)}/>
+                <Input placeholder="username" onChange={(e) => setBody(e.target.value)}/>
+                <Input placeholder="email" onChange={(e) => setBody(e.target.value)}/>  
+                <Input placeholder="password" onChange={(e) => setBody(e.target.value)}/>
+                <Input placeholder="confirm password" onChange={(e) => setBody(e.target.value)}/>
                 <Agreement>
                   By creating an account, I consent to the processing of my personal
                   data in accordance with the <b>PRIVACY POLICY</b>
                 </Agreement>
-                <Button>CREATE</Button>
+                <Button type="submit">CREATE</Button>
             </Form>
       </Wrapper>
     </Container>
