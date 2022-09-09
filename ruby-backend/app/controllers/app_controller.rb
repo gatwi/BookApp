@@ -1,29 +1,51 @@
-#user_controller.rb
+class ApplicationController < Sinatra::Base
+    set :default_content_type, 'application/json' 
 
-class UserController < ApplicationController
+     #returns all comments
+    get "/comments" do
+      comments = Comment.all.order(:created_at)
+      comments.to_json
+    end
+    
+    #sends info to the server
+    post "/comments" do
+      comment = Comment.create(comment: params[:comment], review: params[:review], rating: params[:rating], username: params[:username])
+      comment.to_json
+    end
+    
+    # patch "/commentss/:id" do
+    #   comments = comments.find(params[:id])
+    #   comments.update(body: params[:body])
+    #   comments.to_json
+    # end
+    
+    # delete "/commentss/:id" do
+    #   comments = comments.find(params[:id])
+    #   comments.destroy
+    #   comments.to_json
+    # end
 
-    skip_before_action :authorize, only: :create
-
-    get '/user' do
-        user = User.all 
-        user.to_json
+    get "/comments" do
+        comments = Comment.all.order(:created_at)
+        comments.to_json
+    end
+      
+      #sends info to the server
+      post "/comments" do
+        comment = Comment.create(comment: params[:comment], review: params[:review], rating: params[:rating], username: params[:username])
+        comment.to_json
     end
 
-    post '/register' do 
-        user = User.create(:email, :first_name, :last_name, :username, :location, :password, :password_confirmation)
-        user.to_json
+      get "/comments" do
+        comments = Comment.all.order(:created_at)
+        comments.to_json
     end
-
-    post 'login' do 
-
-
-    delete '/user' do 
-        user = User.all 
-        user.destroy 
-        user.json 
+      
+      #sends info to the server
+      post "/comments" do
+        comment = Comment.create(comment: params[:comment], review: params[:review], rating: params[:rating], username: params[:username])
+        comment.to_json
     end
-
+    
 end
-
-#book_controller.rb
 
