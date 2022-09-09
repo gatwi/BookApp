@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
 
      #returns all comments
     get "/comments" do
-      comments = Comment.all.order(:created_at)
+      comments = Comment.all.order
       comments.to_json
     end
     
@@ -13,20 +13,20 @@ class ApplicationController < Sinatra::Base
       comment.to_json
     end
     
-    # patch "/commentss/:id" do
+    # patch "/comments/:id" do
     #   comments = comments.find(params[:id])
     #   comments.update(body: params[:body])
     #   comments.to_json
     # end
     
-    # delete "/commentss/:id" do
+    # delete "/comments/:id" do
     #   comments = comments.find(params[:id])
     #   comments.destroy
     #   comments.to_json
     # end
 
     get "/users" do
-        users = User.all.order(:created_at)
+        users = User.all.order
         users.to_json
     end
       
@@ -49,7 +49,7 @@ class ApplicationController < Sinatra::Base
     # end
 
     get "/books" do
-        books = Book.all.order(:created_at)
+        books = Book.all.order
         books.to_json
     end
       
