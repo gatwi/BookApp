@@ -2,6 +2,7 @@ import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -75,11 +76,11 @@ const Navbar = () => {
         </Left>
         <Center><Logo>MAKTABA.</Logo></Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem><Link to="/register">REGISTER</Link></MenuItem>
+          <MenuItem><Link to="/signup">SIGN IN</Link></MenuItem>
           <MenuItem>
             <Badge badgeContent={2} color="primary" >
-              <ShoppingCartOutlinedIcon />
+              <Link to="/cart"><ShoppingCartOutlinedIcon /></Link>
             </Badge> 
           </MenuItem>
         </Right>
