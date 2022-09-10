@@ -103,12 +103,11 @@ const Footer = () => {
         <Center>
             <Title>Links</Title>
             <List>
-                <ListItem>Home</ListItem>
                 <ListItem><Link to="/catalog">Catalog</Link></ListItem>
                 <ListItem><Link to="/lib">Library</Link></ListItem>
-                <ListItem>Order Tracking</ListItem>
-                <ListItem>Wishlist</ListItem>
-                <ListItem>Terms and Conditions</ListItem>
+                <ListItem><Link to="/orders">Order Tracking</Link></ListItem>
+                <ListItem><Link to="/santa">Wishlist</Link></ListItem>
+                <ListItem><Link to="/tnc">Terms and Conditions</Link></ListItem>
             </List>
         </Center>
         <Right>
