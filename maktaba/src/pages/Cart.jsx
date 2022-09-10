@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material';
+import RemoveIcon from '@muiicons-material/Remove';
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Announcements from '../components/Announcements';
@@ -17,7 +17,7 @@ const Title = styled.h1`
   font-weight: 300;
   text-align: center;
 `;
-
+ 
 const Top = styled.div`
   display: flex;
   align-items: center;
@@ -159,7 +159,7 @@ const Cart = () => {
         <Top>
           <TopButton>KEEP BROWSING</TopButton>
           <TopTexts>
-            <TopText>Shopping Bag (3)</TopText>
+            <TopText>Shopping Bag (4)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
