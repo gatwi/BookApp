@@ -1,0 +1,123 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "first_name": "Gatwiri",
+        "last_name": "Murithi",
+        "username": "moriarty",
+        "password": "JARVIS",
+        "email": "gatwimurithi@gmail.com"
+      },
+      {
+        "id": 2,
+        "first_name": "Munene",
+        "last_name": "Nyaga",
+        "username": "natty",
+        "password": "THANOS",
+        "email": "munenenyaga@gmail.com"
+      },
+      {
+        "id": 3,
+        "first_name": "Effie",
+        "last_name": "Lina",
+        "username": "effie",
+        "password": "SCARLET",
+        "email": "effielinah@gmail.com"
+      },
+      {
+        "id": 4,
+        "first_name": "Mwangi",
+        "last_name": "Martin",
+        "username": "weber",
+        "password": "IRONMAN",
+        "email": "martinmwangi@gmail.com"
+      },
+      {
+        "id": 5,
+        "first_name": "Linda",
+        "last_name": "Murithi",
+        "username": "ella",
+        "password": "BLACKWIDOW",
+        "email": "lindamurithi@gmail.com"
+      }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "comment": "I found the imagery a little lacking",
+        "review":  "The Newyork Times Review",
+        "rating": 3,
+        "username": "moriarty"
+      },
+      {
+        "id": 2,
+        "comment":  "I loved the wordplay and characterization",
+        "review": "Goodreads Review",
+        "rating": 5,
+        "username": "ella"
+      },
+      {
+        "id": 3,
+        "comment":  "There was too much hype around this",
+        "review":   "AKO Review",
+        "rating": 2,
+        "username": "natty"
+      },
+      {
+        "id": 4,
+        "comment":  "I wish I could forget so I can read it again",
+        "review":   "CAINE Review",
+        "rating": 4,
+        "username": "moriarty"
+      },
+      {
+        "id": 5,
+        "comment":  "Such a riveting account",
+        "review":    "Vulture Magazine Review",
+        "rating": 4,
+        "username": "weber"
+      }
+    ],
+    "books": [
+      {
+        "id": 1,
+        "title": "Americanah",
+        "author": "Chimamanda Adichie",
+        "publication": "2012",
+        "genre": "African Literature",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpMc9jURDSqnklpnvgp7B0vEFcaBt1MpSQ-ge4QeOKWtiteznZP7NBMAgFXEtPrdYNhe0&usqp=CAU"
+      },
+      {
+        "id": 2,
+        "title": "Adultery",
+        "author": "Paulo Coelho",
+        "publication": "2007",
+        "genre": "Fiction",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/715HijrRROL.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Odufa",
+        "author": "Othuke Omniabohs",
+        "publication": "2022",
+        "genre": "African Literature",
+        "image": "https://asawana.files.wordpress.com/2020/08/img_0807.jpg" 
+      },
+      {
+        "id": 4,
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "publication": "1984",
+        "genre": "Fantasy",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/91b4gYTeN1L.jpg" 
+      },
+      {
+        "id": 5,
+        "title": "Overstory",
+        "author": "Richard Powers",
+        "publication": "2018",
+        "genre": "Fantasy",
+        "image": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F51719906-49d8-11e8-8ee8-cae73aab7ccb?fit=scale-down&source=next&width=300"
+      }
+    ]
+}
