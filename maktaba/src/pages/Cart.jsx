@@ -1,7 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import AddIcon from '@mui/icons-material';
-import RemoveIcon from '@muiicons-material/Remove';
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Announcements from '../components/Announcements';
