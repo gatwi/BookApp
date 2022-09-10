@@ -6,6 +6,7 @@ import PinDropIcon from '@mui/icons-material/PinDrop';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -103,12 +104,8 @@ const Footer = () => {
             <Title>Links</Title>
             <List>
                 <ListItem>Home</ListItem>
-                <ListItem>Cart</ListItem>
-                <ListItem>Children's Books</ListItem>
-                <ListItem>YA Fiction</ListItem>
-                <ListItem>African Literature</ListItem>
-                <ListItem>Memoirs</ListItem>
-                <ListItem>Accessories</ListItem>
+                <ListItem><Link to="/catalog">Catalog</Link></ListItem>
+                <ListItem><Link to="/lib">Library</Link></ListItem>
                 <ListItem>Order Tracking</ListItem>
                 <ListItem>Wishlist</ListItem>
                 <ListItem>Terms and Conditions</ListItem>
