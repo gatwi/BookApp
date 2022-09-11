@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { popularProducts } from "../data";
 import CategoryItem from "./components/CategoryItem";
 
@@ -96,8 +96,7 @@ function Cart(){
           <Content cartItems={CategoryItem}>
             <img src={product1} alt="product" />
             <p>
-              Fall Limited Edition Sneakers <br />
-              $125.00 x {CategoryItem}
+              {CategoryItem}
             </p>
             <img src={popularProducts} alt="" id="bin" onClick={CategoryItem} />
           </Content>
