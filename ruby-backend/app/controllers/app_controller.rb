@@ -14,13 +14,13 @@ class ApplicationController < Sinatra::Base
     end
     
     # patch "/comments/:id" do
-    #   comments = comments.find(params[:id])
+    #   comments = comment.find(params[:id])
     #   comments.update(body: params[:body])
     #   comments.to_json
     # end
     
     # delete "/comments/:id" do
-    #   comments = comments.find(params[:id])
+    #   comments = comment.find(params[:id])
     #   comments.destroy
     #   comments.to_json
     # end
@@ -36,16 +36,16 @@ class ApplicationController < Sinatra::Base
         user.to_json
     end
 
-    # patch "/commentss/:id" do
-    #   comments = comments.find(params[:id])
-    #   comments.update(body: params[:body])
-    #   comments.to_json
+    # patch "/users/:id" do
+    #   users = user.find(params[:id])
+    #   users.update(body: params[:body])
+    #   users.to_json
     # end
     
-    # delete "/commentss/:id" do
-    #   comments = comments.find(params[:id])
-    #   comments.destroy
-    #   comments.to_json
+    # delete "/users/:id" do
+    #   users = user.find(params[:id])
+    #   users.destroy
+    #  users.to_json
     # end
 
     get "/books" do
@@ -59,16 +59,16 @@ class ApplicationController < Sinatra::Base
         book.to_json
     end
 
-    # patch "/commentss/:id" do
-    #   comments = comments.find(params[:id])
-    #   comments.update(body: params[:body])
-    #   comments.to_json
+    # patch "/books/:id" do
+    #   books = book.find(params[:id])
+    #   books.update(body: params[:body])
+    #   books.to_json
     # end
     
-    # delete "/commentss/:id" do
-    #   comments = comments.find(params[:id])
-    #   comments.destroy
-    #   comments.to_json
+    # delete "/books/:id" do
+    #   books = book.find(params[:id])
+    #   books.destroy
+    #  books.to_json
     # end
 
     
