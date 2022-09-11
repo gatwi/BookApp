@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { useContext, useEffect, useRef } from 'react';
-import { popularProducts } from "../data";
-import CategoryItem from "./components/CategoryItem";
+import { popularProducts, sliderItems } from "../data";
+import Catalog from "./Catalog";
 
 
 
@@ -78,32 +78,31 @@ function Cart(){
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {
-        toggleShow(false);
+        sliderItems(false);
       }
     };
     document.addEventListener("click", handleClickOutside, true);
     return () => {
       document.removeEventListener("click", handleClickOutside, true);
     };
-  }, [toggleShow]);
+  }, [sliderItems]);
 
   return(
-    <Container show={show} id={id} ref={cartRef}>
+    <Container show={show} ref={cartRef}>
       <h6>Cart</h6>
       <hr />
-      {CategoryItem > 0 ? (
+      {Catalog > 0 ? (
         <>
-          <Content cartItems={CategoryItem}>
-            <img src={product1} alt="product" />
+          <Content cartItems={Catalog}>
+            <img src={popularProducts} alt="product" />
             <p>
-              {CategoryItem}
+              {Catalog}
             </p>
-            <img src={popularProducts} alt="" id="bin" onClick={CategoryItem} />
+            <img src={popularProducts} alt="" id="bin" onClick={Catalog} />
           </Content>
           <div>
             <CartBtn className="btn">Checkout</CartBtn>
           </div>
-
           <Content>
             <p>Your cart is empty</p>
           </Content>
