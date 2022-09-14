@@ -10,7 +10,7 @@ const Container = styled.div`
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
     ),
-    url("https://i.pinimg.com/736x/14/3e/67/143e67e346da0b1b23553dbf0199f514.jpg")
+    url("https://cdn4.vectorstock.com/i/1000x1000/46/68/a-pile-of-books-vector-4014668.jpg")
         center;
     background-size: cover;
     display: flex;
@@ -41,10 +41,6 @@ const Input = styled.input`
   padding: 10px;
 `;
 
-const Agreement = styled.span`
-  font-size: 12px;
-  margin: 20px 0px;
-`;
 
 const Button = styled.button`
   width: 40%;
