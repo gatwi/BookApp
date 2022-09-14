@@ -53,13 +53,13 @@ const Button = styled.button`
 
 
 
-const Register = () => {
+const Wishlist = () => {
   // const [state, setState] = useState("")
   const [book, setBook] = useState({});
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log(user)
+    // console.log(book)
 
     fetch("http://localhost:9292/books", {
       method: "POST",
@@ -80,7 +80,7 @@ const Register = () => {
   }
 
   const onChange = (e) => {
-    setBook({...book, [e.target.book]:e.target.book})
+    setBook({...book, [e.target.name]:e.target.value})
   };
 
   return (
@@ -99,4 +99,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Wishlist;

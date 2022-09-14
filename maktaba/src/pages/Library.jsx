@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { useEffect, useState } from "react";
 
 
 const Container = styled.div`
@@ -48,21 +49,27 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Register = () => {
+const Library = () => {
+  const [booksList, setBooksList] = useState({})
+  useEffect (() => {
+    fetch("http://localhost:9292/books")
+      .then(r=>r.json())
+      .then(books=>setBooksList(books))
+      }, {}
+  )
+
+  const myBooks = Array.from(booksList).map((book) => {
+    <h1>{book.title}</h1>
+  })
+  
   return (
     <Container>
       <Wrapper>
         <Title>MY LIBRARY</Title>
-        <Form>
-          <Input placeholder="Book Name" />
-          <Input placeholder="description..." />
-          <Input placeholder="image" />
-          <Input placeholder="Goodreads Link" />
-          <Button>ADD BOOK</Button>
-        </Form>
+        {myBooks}
       </Wrapper>
     </Container>
   );
 };
 
-export default Register;
+export default Library;
