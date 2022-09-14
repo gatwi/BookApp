@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
 
      #returns all comments
     get "/comments" do
-      comments = Comment.all.order
+      comments = Comment.all
       comments.to_json
     end
     
@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
     # end
 
     get "/users" do
-        users = User.all.order
+        users = User.all
         users.to_json
     end
       
@@ -49,7 +49,7 @@ class ApplicationController < Sinatra::Base
     # end
 
     get "/books" do
-        books = Book.all.order
+        books = Book.all
         books.to_json
     end
       
@@ -70,7 +70,5 @@ class ApplicationController < Sinatra::Base
     #   books.destroy
     #  books.to_json
     # end
-
-    
 end
 

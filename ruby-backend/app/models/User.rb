@@ -1,3 +1,4 @@
 class User < ActiveRecord::Base 
-    has_many: books, comments
+    has_many :comments 
+    has_many :books, through: :comments
 end

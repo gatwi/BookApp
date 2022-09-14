@@ -12,3 +12,5 @@ end
 use Rack::JSONBodyParser
 
 #bundle exec rerun -b 'rackup con
+
+run ApplicationController

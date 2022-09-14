@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Library from './pages/Library';
 
 const Container = styled.div`
     width: 100vw;
@@ -55,7 +56,7 @@ const Button = styled.button`
 
 
 
-const Register = ({ currentUser, onAddUser }) => {
+const Register = ({ currentUser, onAddUser, setBody }) => {
   const [user, setUser] = useState("");
 
   function handleSubmit(e) {
@@ -93,7 +94,7 @@ const Register = ({ currentUser, onAddUser }) => {
                   By creating an account, I consent to the processing of my personal
                   data in accordance with the <b>PRIVACY POLICY</b>
                 </Agreement>
-                <Button type="submit">CREATE</Button>
+                <Button type="submit"><Link to="/my_lib"><Library/></Link>CREATE</Button>
             </Form>
       </Wrapper>
     </Container>

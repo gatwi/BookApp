@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useContext, useEffect, useRef } from 'react';
-import { popularProducts, sliderItems } from "../data";
+import { popularProducts } from "../data";
 import Catalog from "./Catalog";
 
 
@@ -78,14 +78,14 @@ function Cart(){
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {
-        sliderItems(false);
+        popularProducts(false);
       }
     };
     document.addEventListener("click", handleClickOutside, true);
     return () => {
       document.removeEventListener("click", handleClickOutside, true);
     };
-  }, [sliderItems]);
+  }, [popularProducts]);
 
   return(
     <Container show={show} ref={cartRef}>
