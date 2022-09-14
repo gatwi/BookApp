@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Library from './pages/Library';
+// import { Link } from "react-router-dom";
+// import Library from '../pages/Library';
+
 
 const Container = styled.div`
     width: 100vw;
@@ -56,11 +58,13 @@ const Button = styled.button`
 
 
 
-const Register = ({ currentUser, onAddUser, setBody }) => {
-  const [user, setUser] = useState("");
+const Register = () => {
+  // const [state, setState] = useState("")
+  const [user, setUser] = useState({});
 
   function handleSubmit(e) {
     e.preventDefault();
+    // console.log(user)
 
     fetch("http://localhost:9292/users", {
       method: "POST",
@@ -68,33 +72,38 @@ const Register = ({ currentUser, onAddUser, setBody }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: currentUser.username,
-        user: user,
+        first_name:  user.first_name,
+        last_name: user.last_name,
+        username: user.username,
+        email: user.email,
+        password: user.password
       }),
     })
       .then((r) => r.json())
       .then((newUser) => {
-        onAddUser(newUser);
-        setUser("");
+        setUser("newUser");
       });
   }
+
+  const onChange = (e) => {
+    setUser({...user, [e.target.name]:e.target.value})
+  };
 
   return (
     <Container>
         <Wrapper>
             <Title>CREATE AN ACCOUNT</Title>
             <Form onSubmit={handleSubmit}>
-                <Input placeholder="name" onChange={(e) => setBody(e.target.value)}/>
-                <Input placeholder="last name" onChange={(e) => setBody(e.target.value)}/>
-                <Input placeholder="username" onChange={(e) => setBody(e.target.value)}/>
-                <Input placeholder="email" onChange={(e) => setBody(e.target.value)}/>  
-                <Input placeholder="password" onChange={(e) => setBody(e.target.value)}/>
-                <Input placeholder="confirm password" onChange={(e) => setBody(e.target.value)}/>
+                <Input placeholder="name" name="first_name" onChange={onChange}/>
+                <Input placeholder="last name" name="last_name" onChange={onChange}/>
+                <Input placeholder="username" name="username" onChange={onChange}/>
+                <Input placeholder="email" name="email" onChange={onChange}/>  
+                <Input placeholder="password" name="password" onChange={onChange}/>
                 <Agreement>
                   By creating an account, I consent to the processing of my personal
                   data in accordance with the <b>PRIVACY POLICY</b>
                 </Agreement>
-                <Button type="submit"><Link to="/my_lib"><Library/></Link>CREATE</Button>
+                <Button type="submit">CREATE USER</Button>
             </Form>
       </Wrapper>
     </Container>
