@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
+import Book from "../components/Books";
+
 
 
 const Container = styled.div`
@@ -59,14 +61,26 @@ const Library = () => {
   )
 
   const myBooks = Array.from(booksList).map((book) => {
-    <h1>{book.title}</h1>
+    <Book key={book.id} book={book} />
   })
+
+  console.log(booksList)
   
   return (
     <Container>
       <Wrapper>
-        <Title>MY LIBRARY</Title>
-        {myBooks}
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myBooks}
+          </tbody>
+        </table>
       </Wrapper>
     </Container>
   );

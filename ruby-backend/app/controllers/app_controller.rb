@@ -59,16 +59,16 @@ class ApplicationController < Sinatra::Base
         book.to_json
     end
 
-    # patch "/books/:id" do
-    #   books = book.find(params[:id])
-    #   books.update(body: params[:body])
-    #   books.to_json
-    # end
+    patch "/books/:id" do
+      books = Book.find(params[:id])
+      books.update(body: params[:body])
+      books.to_json
+    end
     
-    # delete "/books/:id" do
-    #   books = book.find(params[:id])
-    #   books.destroy
-    #  books.to_json
-    # end
+    delete "/books/:id" do
+      books = Book.find(params[:id])
+      books.destroy
+      books.to_json
+    end
 end
 
