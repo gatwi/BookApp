@@ -6,6 +6,7 @@ import Library from "./pages/Library";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+import Wishlist from "./components/Wishlist";
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/shopping" element={<Cart/>} />
+        <Route path="/santa" element={<Wishlist/>} />
       </Routes>
     </Router>
   );

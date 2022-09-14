@@ -59,50 +59,44 @@ const Button = styled.button`
 
 const Register = () => {
   // const [state, setState] = useState("")
-  const [user, setUser] = useState({});
+  const [book, setBook] = useState({});
 
   function handleSubmit(e) {
     e.preventDefault();
     // console.log(user)
 
-    fetch("http://localhost:9292/users", {
+    fetch("http://localhost:9292/books", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        first_name:  user.first_name,
-        last_name: user.last_name,
-        username: user.username,
-        email: user.email,
-        password: user.password
+        title:  book.title,
+        author: book.author,
+        publication: book.publication,
+        genre: book.genre
       }),
     })
       .then((r) => r.json())
       .then((newUser) => {
-        setUser("newUser");
+        setBook("newBook");
       });
   }
 
   const onChange = (e) => {
-    setUser({...user, [e.target.name]:e.target.value})
+    setBook({...book, [e.target.book]:e.target.book})
   };
 
   return (
     <Container>
         <Wrapper>
-            <Title>CREATE AN ACCOUNT</Title>
+            <Title>ADD NEW BOOK</Title>
             <Form onSubmit={handleSubmit}>
-                <Input placeholder="name" name="first_name" onChange={onChange}/>
-                <Input placeholder="last name" name="last_name" onChange={onChange}/>
-                <Input placeholder="username" name="username" onChange={onChange}/>
-                <Input placeholder="email" name="email" onChange={onChange}/>  
-                <Input placeholder="password" name="password" onChange={onChange}/>
-                <Agreement>
-                  By creating an account, I consent to the processing of my personal
-                  data in accordance with the <b>PRIVACY POLICY</b>
-                </Agreement>
-                <Button type="submit">CREATE USER</Button>
+                <Input placeholder="title" name="title" onChange={onChange}/>
+                <Input placeholder="author" name="author" onChange={onChange}/>
+                <Input placeholder="publication" name="publication" onChange={onChange}/>
+                <Input placeholder="genre" name="genre" onChange={onChange}/>  
+                <Button type="submit">ADD BOOK</Button>
             </Form>
       </Wrapper>
     </Container>
