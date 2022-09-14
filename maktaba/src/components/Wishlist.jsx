@@ -78,7 +78,7 @@ const Register = () => {
       }),
     })
       .then((r) => r.json())
-      .then((newUser) => {
+      .then((newBook) => {
         setBook("newBook");
       });
   }
